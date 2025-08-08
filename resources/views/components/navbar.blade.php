@@ -2,12 +2,13 @@
     <div class="max-w-[1312px] mx-auto px-6 md:px-6 lg:px-16">
         <div class="flex items-center justify-between mx-auto">
             <a class="flex flex-row items-center justify-center gap-2 font-sans text-xl font-medium " href="/">
-                <img
-                    src="{{ asset('images/Logo.png') }}"
-                    alt=""
-                    class="h-10 mx-auto" />
+                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow">
+                    <img
+                        src="{{ asset('images/Logo.png') }}"
+                        alt=""
+                        class="h-10 mx-auto" />
+                </div>
                 </a>
-            
 
             <ul
                 class="absolute flex-col items-center justify-center hidden w-full gap-6 text-3xl lg:flex lg:flex-row lg:text-base lg:gap-2 lg:relative lg:h-auto lg:w-auto lg:bg-transparent"
@@ -16,7 +17,7 @@
                 <li>
                     <a
                         href="/registration">
-                        <button class="border border-green-800 rounded-md bg-green-800 text-white hover:bg-green-700 hover:bg-opacity-90 py-1.5 px-4">
+                        <button class="border border-green-800 rounded-md hover:cursor-pointer bg-black text-white  hover:opacity-80 py-1.5 px-4">
                             Registration
                         </button>
                     </a>
@@ -24,7 +25,7 @@
                 <li>
                     <a
                         href="/check-order">
-                        <button class="border rounded-md border-gray-900 hover:bg-gray-900 hover:text-white py-1.5 px-4">
+                        <button class="border hover:cursor-pointer rounded-md border-gray-900  py-1.5 px-4">
                             Check Registration
                         </button>
                     </a>
