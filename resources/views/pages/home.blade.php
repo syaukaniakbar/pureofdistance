@@ -3,7 +3,7 @@
 
   <section class="relative flex justify-center overflow-hidden bg-black  py-14 md:py-20 mt-20 md:mt-0 lg:h-screen">
     <img 
-      src="/gallery/image_3.jpeg" 
+      src="/gallery/image_1.jpeg" 
       alt="Running Event Banner" 
       class="absolute inset-0 w-full h-full object-cover opacity-40"
     >
@@ -49,7 +49,7 @@
     <!-- Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       @foreach ([
-        ['image_1.jpeg', 'pureofdistance-image_1'],
+        ['image_3.jpeg', 'pureofdistance-image_3'],
         ['image_2.jpeg', 'pureofdistance-image_2'],
         ['image_4.jpeg', 'pureofdistance-image_4'],
         ['image_5.jpeg', 'pureofdistance-image_5'],
