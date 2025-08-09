@@ -22,14 +22,14 @@
                         </button>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a
                         href="/check-order">
                         <button class="border hover:cursor-pointer rounded-md border-gray-900  py-1.5 px-4">
                             Check Registration
                         </button>
                     </a>
-                </li>
+                </li> -->
             </ul>
 
             <!-- Mobile Hamburger Button -->
@@ -47,13 +47,13 @@
 
 
             <!-- Mobile Navbar -->
-            <ul id="mobileMenu" class="lg:hidden flex flex-col justify-center items-center absolute h-dvh bg-green-800 w-full top-22 left-0 space-y-6 p-6 transform transition-all duration-500 ease-in-out translate-x-full">
+            <ul id="mobileMenu" class="lg:hidden flex flex-col justify-center items-center absolute h-dvh bg-green-800 w-full top-24 left-0 space-y-6 p-6 transform transition-all duration-500 ease-in-out translate-x-full">
                 <li class="w-36">
                     <a class="block text-center py-1.5 bg-white text-green-800 font-semibold rounded-md hover:bg-opacity-90" href="/registration">Registration</a>
                 </li>
-                <li class="w-36">
+                <!-- <li class="w-36">
                     <a class="block text-center py-1.5 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-blue-800" href="/check-order">Check Regist</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
