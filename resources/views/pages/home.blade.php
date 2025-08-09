@@ -1,9 +1,9 @@
 <x-layouts.main>
   <x-slot:title>{{ 'Home | Pureofdistance' }}</x-slot>
 
-    <section class="relative flex justify-center overflow-hidden bg-black  py-14 md:py-20 mt-20 md:mt-0 lg:h-screen">
+  <section class="relative flex justify-center overflow-hidden bg-black  py-14 md:py-20 mt-20 md:mt-0 lg:h-screen">
     <img 
-      src="/images/miguel-a-amutio-Y0woUmyxGrw-unsplash.jpg" 
+      src="/gallery/image_3.jpeg" 
       alt="Running Event Banner" 
       class="absolute inset-0 w-full h-full object-cover opacity-40"
     >
@@ -19,18 +19,77 @@
         <div class="flex gap-4 flex-row">
           <a href="/registration">
             <button class="border border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Register
+              Klik untuk Gabung!
             </button>
           </a>
-          <a href="#learn-more">
+          <!-- <a href="#learn-more">
             <button class="border border-white rounded-md bg-transparent text-white font-semibold  hover:bg-opacity-90 py-2 px-6 transition hover:cursor-pointer">
               Learn More
             </button>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
   </section>
+
+<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+      <!-- Judul -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+        Galeri Foto
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+          Mengabadikan langkah penuh semangat, kebersamaan, dan momen berharga di setiap garis lintasan.
+      </p>
+    </div>
+
+
+    <!-- Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      @foreach ([
+        ['image_1.jpeg', 'pureofdistance-image_1'],
+        ['image_2.jpeg', 'pureofdistance-image_2'],
+        ['image_4.jpeg', 'pureofdistance-image_4'],
+        ['image_5.jpeg', 'pureofdistance-image_5'],
+        ['image_6.jpeg', 'pureofdistance-image_6'],
+        ['image_7.jpeg', 'pureofdistance-image_7'],
+        ['image_8.jpeg', 'pureofdistance-image_8'],
+        ['image_9.jpeg', 'pureofdistance-image_9'],
+      ] as $item)
+        <a 
+          href="{{ asset('gallery/' . $item[0]) }}" 
+          data-lightbox="gallery" 
+          data-title="{{ $item[1] }}"
+          class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+        >
+          <!-- Gambar -->
+          <img 
+            src="{{ asset('gallery/' . $item[0]) }}" 
+            alt="{{ $item[1] }}" 
+            class="w-full h-56 sm:h-64 lg:h-72 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+            loading="lazy"
+          >
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent 
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+            <span class="text-white font-semibold text-sm sm:text-base tracking-wide">
+              {{ $item[1] }}
+            </span>
+          </div>
+        </a>
+      @endforeach
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 
   <section class="relative isolate overflow-hidden py-32 bg-gradient-to-br bg-slate from-slate-900 via-slate-800 to-slate-700 text-white">
     <!-- Background Gradients / Bubbles -->
@@ -90,18 +149,6 @@
             <p class="text-md">Engage with local runners and create lasting friendships while achieving your fitness goals.</p>
           </div>
         </div>
-        <div class="flex justify-center md:justify-start gap-4 flex-row">
-          <a href="/registration">
-            <button class="border border-black rounded-md bg-black text-white font-semibold hover:bg-gray-800 hover:bg-opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Register
-            </button>
-          </a>
-          <a href="#learn-more">
-            <button class="border border-black rounded-md bg-transparent text-black font-semibold  hover:bg-opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Learn More
-            </button>
-          </a>
-        </div>
       </div>
       <div class="hidden lg:flex h-full w-1/3 items-center justify-center">
         <img 
@@ -112,6 +159,7 @@
       </div>
     </div>
   </section>
+  
   <script>
     // Ganti dengan waktu event kamu (format: YYYY-MM-DDTHH:MM:SS)
     const targetDate = new Date("2025-08-16T07:00:00").getTime();
@@ -142,4 +190,5 @@
     updateCountdown(); // run once on load
     setInterval(updateCountdown, 1000); // update every second
   </script>
+
 </x-layouts.main>
