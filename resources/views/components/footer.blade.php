@@ -35,9 +35,9 @@
       <div class="flex items-center w-full h-full mt-4 ml-4 md:mt-0 md:w-2/5">
         <div class="w-[400px] flex h-fit">
           <div class="flex flex-col w-2/5 h-full gap-4 py-2 ">
-            <p class="font-bold text-slate-800">Pages</p>
-            <a href="/" class="text-sm font-medium text-slate-800">Home</a>
-            <a href="/about" class="text-sm font-medium text-slate-800">Registration</a>
+            <p class="font-bold text-slate-800 font-fallback">Pages</p>
+            <a href="/" class="text-sm font-fallback font-medium text-slate-800">Home</a>
+            <a href="/about" class="text-sm font-fallback font-medium text-slate-800">Registration</a>
           </div>
         </div>
       </div>

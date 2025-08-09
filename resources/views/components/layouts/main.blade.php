@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-fallback- antialiased">
     <div class="min-h-screen bg-gray-100">
         @include('components.navbar')
         <!-- Page Content -->

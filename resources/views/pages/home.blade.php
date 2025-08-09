@@ -10,16 +10,18 @@
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative flex flex-col items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
       <div class="max-w-xl text-left text-white">
-        <h1 class="mb-4 mt-8 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
-          JOIN THE ULTIMATE RUNNING CHALLENGE TODAY!
+        <h1 class="mb-4 mt-8 text-3xl font-bold font-fallback leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
+          <!-- JOIN THE ULTIMATE RUNNING CHALLENGE TODAY! -->
+           Your Run. Your Destiny. Let’s Make It Pure.
         </h1>
-        <p class="mb-6 text-lg md:text-xl drop-shadow">
-          Experience the thrill of competition and the joy of community at our annual running event. Whether you're a seasoned runner or just starting out, there's a place for you here.
+        <p class="mb-6 text-lg md:text-xl font-fallback">
+          Unlock the power of synergy, leveraging each other's strengths to achieve the goals with greater speed.
+          <!-- <br>Pure of Distance - Caffeine Power - Daily Run -->
         </p>
         <div class="flex gap-4 flex-row">
           <a href="/registration">
-            <button class="border border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Klik untuk Gabung!
+            <button class="border font-fallback border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
+              Join Our Movement!
             </button>
           </a>
           <!-- <a href="#learn-more">
@@ -37,11 +39,11 @@
     
       <!-- Judul -->
     <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-        Galeri Foto
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-fallback tracking-tight text-gray-900">
+        Photo Gallery
       </h2>
-      <p class="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-          Mengabadikan langkah penuh semangat, kebersamaan, dan momen berharga di setiap garis lintasan.
+      <p class="mt-4 text-base font-fallback sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Capturing every stride, the spirit of togetherness, and unforgettable moments along every track.
       </p>
     </div>
 
@@ -100,30 +102,34 @@
 
     <!-- Content -->
     <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 uppercase">
-        We Are Coming Soon
+      <h2 class="text-4xl md:text-5xl font-bold font-fallback tracking-tight mb-6 ">
+        <!-- We Are Coming Soon -->
+        Few Days Left – Register Now!
       </h2>
-      <p class="text-base md:text-lg text-white/80 mb-12 max-w-xl mx-auto">
-        Get ready to experience the thrill of running! <br>          
-        Join us for <span class="font-bold text-white">Pure of the Distance</span> and be part of something special!
+      <p class="text-base font-fallback md:text-lg text-white/80 mb-12 max-w-xl mx-auto">
+        <strong class="text-white">150 runners.</strong> One unforgettable run. The clock is ticking—are you in?
+
+
+        <!-- Get ready to experience the thrill of running! <br>          
+        Join us for <span class="font-bold text-white">Pure of the Distance</span> and be part of something special! -->
       </p>
 
       <!-- Countdown Boxes -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
         <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="days" class="text-4xl font-bold text-white">00</h3>
+          <h3 id="days" class="text-4xl font-bold font-fallback text-white">00</h3>
           <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Days</p>
         </div>
         <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="hours" class="text-4xl font-bold text-white">00</h3>
+          <h3 id="hours" class="text-4xl font-bold font-fallback text-white">00</h3>
           <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Hours</p>
         </div>
         <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="minutes" class="text-4xl font-bold text-white">00</h3>
+          <h3 id="minutes" class="text-4xl font-bold font-fallback text-white">00</h3>
           <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Minutes</p>
         </div>
         <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="seconds" class="text-4xl font-bold text-white">00</h3>
+          <h3 id="seconds" class="text-4xl font-bold font-fallback text-white">00</h3>
           <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Seconds</p>
         </div>
       </div>
@@ -133,12 +139,12 @@
   <section class="flex justify-center py-10 mx-auto bg-white md:py-14">
     <div class="relative gap-4 flex flex-row items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
       <div class="md:w-2/3 w-full text-center md:text-left  text-black pr-0 md:pr-10">
-        <h1 class="mb-4 mt-8 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
+        <h1 class="mb-4 mt-8 text-3xl font-bold font-fallback leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
           Discover The Joy of Running Together
         </h1>
-        <p class="mb-6 text-lg md:text-xl drop-shadow">
-          Participating in our event offers numerous health benefits and fosters community spirit. Join us to improve your fitness and connect with fellow runners.
-        </p>
+        <p class="mb-6 text-lg md:text-xl font-fallback">
+          <strong class="text-black">POD</strong> is not a running club, but rather a sport activity movement created for all runners.
+          <strong class="text-black">POD</strong> was born in Borneo and will bring the sweat to all city.        </p>
         <div class="w-full h-full mb-6 gap-6 flex flex-col md:flex-row">
           <div class="w-full md:w-1/2 pr-0 md:pr-2 h-full ">
             <h2 class="mb-4 mt-8 text-lg uppercase font-bold leading-tight drop-shadow-lg">Health Benefits</h2>

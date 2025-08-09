@@ -17,7 +17,7 @@
                 <li>
                     <a
                         href="/registration">
-                        <button class="border border-green-800 rounded-md hover:cursor-pointer bg-black text-white  hover:opacity-80 py-1.5 px-4">
+                        <button class="font-fallback border border-green-800 rounded-md hover:cursor-pointer bg-black text-white  hover:opacity-80 py-1.5 px-4">
                             Registration
                         </button>
                     </a>
