@@ -9,18 +9,20 @@
     >
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative flex flex-col items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
-      <div class="max-w-xl text-left text-white">
-        <h1 class="mb-4 mt-8 text-3xl font-bold font-fallback leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
-          <!-- JOIN THE ULTIMATE RUNNING CHALLENGE TODAY! -->
-           Your Run. Your Destiny. Let’s Make It Pure.
-        </h1>
-        <p class="mb-6 text-lg md:text-xl font-fallback">
-          Unlock the power of synergy, leveraging each other's strengths to achieve the goals with greater speed.
-          <!-- <br>Pure of Distance - Caffeine Power - Daily Run -->
+      <div class="max-w-5xl text-left text-white space-y-6">
+          <img 
+            src="{{ asset('images/pod_logo_1_white.PNG') }}" 
+            alt="pod_logo_1" 
+            class="h-56 sm:h-64 lg:h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+            loading="lazy"
+          >
+        <p class="mb-6 text-lg md:text-2xl font-fallback font-medium">
+         POD is not a running club, but rather a sport activity movement created for all runners. <br>
+         POD was born in Borneo and will bring the sweat to all city.
         </p>
-        <div class="flex gap-4 flex-row">
+        <div class="mt-2 flex gap-4 flex-row">
           <a href="/registration">
-            <button class="border font-fallback border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
+            <button class="border text-2xl font-fallback border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
               Join Our Movement!
             </button>
           </a>
@@ -38,14 +40,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
       <!-- Judul -->
-    <div class="text-center mb-14">
+    <!-- <div class="text-center mb-14">
       <h2 class="text-3xl sm:text-4xl font-extrabold font-fallback tracking-tight text-gray-900">
         Photo Gallery
       </h2>
       <p class="mt-4 text-base font-fallback sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Capturing every stride, the spirit of togetherness, and unforgettable moments along every track.
       </p>
-    </div>
+    </div> -->
 
 
     <!-- Grid -->
@@ -87,13 +89,7 @@
   </div>
 </section>
 
-
-
-
-
-
-
-  <section class="relative isolate overflow-hidden py-32 bg-gradient-to-br bg-slate from-slate-900 via-slate-800 to-slate-700 text-white">
+<section class="relative isolate overflow-hidden py-32 bg-gradient-to-br bg-slate from-green-900 via-green-900 to-green-700 text-white">
     <!-- Background Gradients / Bubbles -->
     <div class="absolute inset-0 z-0">
       <img src="/images/bubble.png" class="absolute -top-[400px] -right-[400px] opacity-20 w-[800px]" alt="">
@@ -101,17 +97,13 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+    <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
       <h2 class="text-4xl md:text-5xl font-bold font-fallback tracking-tight mb-6 ">
         <!-- We Are Coming Soon -->
-        Few Days Left – Register Now!
+        LIMITED SLOT
       </h2>
       <p class="text-base font-fallback md:text-lg text-white/80 mb-12 max-w-xl mx-auto">
-        <strong class="text-white">150 runners.</strong> One unforgettable run. The clock is ticking—are you in?
-
-
-        <!-- Get ready to experience the thrill of running! <br>          
-        Join us for <span class="font-bold text-white">Pure of the Distance</span> and be part of something special! -->
+       Unlock the power of synergy, leveraging each other's strengths to achieve the goals with greater speed <br> <strong>Pure of Distance - Caffeine Power - Daily Run</strong>
       </p>
 
       <!-- Countdown Boxes -->
@@ -136,35 +128,76 @@
     </div>
   </section>
 
-  <section class="flex justify-center py-10 mx-auto bg-white md:py-14">
-    <div class="relative gap-4 flex flex-row items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
-      <div class="md:w-2/3 w-full text-center md:text-left  text-black pr-0 md:pr-10">
-        <h1 class="mb-4 mt-8 text-3xl font-bold font-fallback leading-tight md:text-4xl lg:text-5xl drop-shadow-lg">
-          Discover The Joy of Running Together
-        </h1>
-        <p class="mb-6 text-lg md:text-xl font-fallback">
-          <strong class="text-black">POD</strong> is not a running club, but rather a sport activity movement created for all runners.
-          <strong class="text-black">POD</strong> was born in Borneo and will bring the sweat to all city.        </p>
-        <div class="w-full h-full mb-6 gap-6 flex flex-col md:flex-row">
-          <div class="w-full md:w-1/2 pr-0 md:pr-2 h-full ">
-            <h2 class="mb-4 mt-8 text-lg uppercase font-bold leading-tight drop-shadow-lg">Health Benefits</h2>
-            <p class="text-md">Boost your cardiovascular health and enhance your overall well-being through running.</p>
+<section class="bg-white py-14 md:py-20 relative overflow-hidden">
+  <div class="max-w-[1312px] mx-auto px-6 md:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    
+    <!-- Text Content -->
+    <div class="flex-1 text-center lg:text-left text-gray-900 relative z-10">
+      <h1 class="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+        Discover The Joy of <span class="text-green-600">Running</span> Together
+      </h1>
+
+      <!-- Info Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
+        <!-- Date -->
+        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
+          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
           </div>
-          <div class="w-full md:w-1/2 pr-0 md:pr-2 h-full ">
-            <h2 class="mb-4 mt-8 text-lg uppercase font-bold leading-tight drop-shadow-lg">Community Involvement</h2>
-            <p class="text-md">Engage with local runners and create lasting friendships while achieving your fitness goals.</p>
+          <p class="text-lg font-medium">Saturday, 16 August 2025</p>
+        </div>
+        
+        <!-- Route -->
+        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
+          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
           </div>
+          <p class="text-lg font-medium">5K Route</p>
+        </div>
+
+        <!-- Location -->
+        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
+          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" />
+              <circle cx="12" cy="11" r="2" />
+            </svg>
+          </div>
+          <p class="text-lg font-medium">POD Village - Tigris</p>
         </div>
       </div>
-      <div class="hidden lg:flex h-full w-1/3 items-center justify-center">
-        <img 
-          src="./images/florian-kurrasch-jL4xy2j2p9w-unsplash.jpg" 
-          alt="People Running" 
-          class="object-cover w-full h-full aspect-square rounded-lg"
-        >
-      </div>
+
+      <!-- Additional Info -->
+      <ul class="mt-8 space-y-3 text-left">
+        <li class="text-lg"><span class="font-semibold">Jersey Code:</span> PA.CE jersey black / white</li>
+        <li class="text-lg text-green-600 font-semibold">FREE FOR ALL RUNNERS</li>
+        <li class="text-lg">Fueled by Tigris and Fives.</li>
+        <li class="text-lg">Tigris, Samarinda 75117</li>
+      </ul>
     </div>
-  </section>
+
+    <!-- Image -->
+    <div class="flex-1 flex justify-center relative z-10">
+      <img 
+        src="{{ asset('images/pod_runners.jpeg') }}" 
+        alt="A group of people running together during a marathon event" 
+        loading="lazy"
+        class="object-cover w-full max-w-md rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1"
+      >
+    </div>
+  </div>
+
+  <!-- Decorative background shapes -->
+  <div class="absolute -top-20 -right-20 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-40"></div>
+  <div class="absolute bottom-0 -left-20 w-72 h-72 bg-emerald-100 rounded-full blur-3xl opacity-40"></div>
+</section>
+
+
+
   
   <script>
     // Ganti dengan waktu event kamu (format: YYYY-MM-DDTHH:MM:SS)
