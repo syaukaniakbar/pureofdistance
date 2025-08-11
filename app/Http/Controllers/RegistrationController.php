@@ -27,11 +27,11 @@ class RegistrationController extends Controller
 
         // jika total pendaftaran sama dengan atau kurang dari 160, tampilkan view success
         if ($totalRegistrations <= 160) {
-            return view('pages.success');
+            return view('pages.closed');
         }
 
         // jika lebih dari 160, tampilkan form pendaftaran (atau halaman "kuota penuh")
-        return view('pages.registration')->with('success', 'Pendaftaran penuh!');
+        return view('pages.registration');
     }
 
 
