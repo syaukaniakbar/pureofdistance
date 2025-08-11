@@ -83,7 +83,7 @@
   </div>
 </section>
 
-<section class="relative isolate overflow-hidden py-32 bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white">
+<section class="relative isolate overflow-hidden py-32 bg-gradient-to-br from-[#004122] via-[#00572c] to-[#00834a] text-white">
   <!-- Background Gradients / Bubbles -->
   <div class="absolute inset-0 z-0">
     <img src="/images/bubble.png" class="absolute -top-[400px] -right-[400px] opacity-15 w-[800px]" alt="">
@@ -124,8 +124,7 @@
 
 
 <section class="bg-gradient-to-br from-black via-neutral-900 to-black py-14 md:py-20 relative overflow-hidden">
-  <div class="max-w-[1312px] mx-auto px-6 md:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-    
+  <div class="max-w-[1312px] mx-auto px-6 md:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">  
     <!-- Text Content -->
     <div class="flex-1 text-center lg:text-left text-white relative z-10">
       <h1 class="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -133,7 +132,7 @@
       </h1>
 
       <!-- Info Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
         <!-- Date -->
         <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
           <div class="bg-green-400 text-white p-3 rounded-lg mb-3 shadow-lg shadow-green-500/30">
@@ -143,6 +142,17 @@
           </div>
           <p class="text-lg font-medium">Saturday, 16 August 2025</p>
         </div>
+
+        <!-- Time -->
+        <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
+          <div class="bg-green-400 text-white p-3 rounded-lg mb-3 shadow-lg shadow-green-500/30">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-lg font-medium">Start Your Run at 6:00 AM</p>
+        </div>
+
         
         <!-- Route -->
         <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
