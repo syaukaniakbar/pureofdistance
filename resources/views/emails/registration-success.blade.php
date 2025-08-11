@@ -123,11 +123,6 @@
     </ul>
   </div>
 
-  <!-- Tips -->
-  <div style="margin-top: 20px; padding: 15px; background-color: #E0F2F1; border-radius: 6px; border: 1px solid #B2DFDB; font-size: 15px; line-height: 1.5; color: #004D40;">
-    💡 <strong>Tips:</strong> Datang lebih awal untuk meet & greet sama runner lain dan warm-up bareng!
-  </div>
-
   <!-- Footer -->
   <hr style="margin: 35px 0; border: none; border-top: 1px solid #eee;">
   <p style="font-size: 14px; color: #777; text-align: center;">
@@ -136,11 +131,6 @@
   </p>
 
 </section>
-
-
-
-
-
 
 </body>
 </html>
