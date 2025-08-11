@@ -23,8 +23,17 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        return view('pages.registration');
+        $totalRegistrations = \App\Models\Registration::count();
+
+        // jika total pendaftaran sama dengan atau kurang dari 160, tampilkan view success
+        if ($totalRegistrations <= 160) {
+            return view('pages.success');
+        }
+
+        // jika lebih dari 160, tampilkan form pendaftaran (atau halaman "kuota penuh")
+        return view('pages.registration')->with('success', 'Pendaftaran penuh!');
     }
+
 
     /**
      * Store a newly created resource in storage.
