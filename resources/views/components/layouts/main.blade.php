@@ -7,6 +7,10 @@
 
     <title>{{ $title ?? config('app.name', 'Pureofdistance') }}</title>
 
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/pod_logo_1_white.PNG') }}" type="image/png">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
