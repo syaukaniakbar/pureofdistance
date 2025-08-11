@@ -1,57 +1,58 @@
 <x-layouts.main>
   <x-slot:title>{{ 'Home | Pureofdistance' }}</x-slot>
 
-  <section class="relative flex justify-center overflow-hidden bg-black  py-14 md:py-20 mt-20 md:mt-0 lg:h-screen">
-    <img 
-      src="/gallery/image_1.jpeg" 
-      alt="Running Event Banner" 
-      class="absolute inset-0 w-full h-full object-cover opacity-40"
-    >
-    <div class="absolute inset-0 bg-black opacity-30"></div>
-    <div class="relative flex flex-col items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
-      <div class="max-w-5xl text-left text-white space-y-6">
-          <img 
-            src="{{ asset('images/pod_logo_1_white.PNG') }}" 
-            alt="pod_logo_1" 
-            class="h-56 sm:h-64 lg:h-48 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-            loading="lazy"
-          >
-        <p class="mb-6 text-lg md:text-2xl font-fallback font-medium">
-         POD is not a running club, but rather a sport activity movement created for all runners. <br>
-         POD was born in Borneo and will bring the sweat to all city.
-        </p>
-        <div class="mt-2 flex gap-4 flex-row">
-          <a href="/registration">
-            <button class="border text-2xl font-fallback border-white rounded-md bg-white text-black font-semibold hover:bg-gray-100 hover:opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Join Our Movement!
-            </button>
-          </a>
-          <!-- <a href="#learn-more">
-            <button class="border border-white rounded-md bg-transparent text-white font-semibold  hover:bg-opacity-90 py-2 px-6 transition hover:cursor-pointer">
-              Learn More
-            </button>
-          </a> -->
-        </div>
+<section class="relative flex justify-center overflow-hidden bg-black mt-20 md:mt-0 min-h-[80vh] lg:min-h-screen py-14 md:py-20">
+  <!-- Background Image -->
+  <img 
+    src="/gallery/image_1.jpeg" 
+    alt="" 
+    class="absolute inset-0 w-full h-full object-cover opacity-40" 
+    loading="lazy"
+  >
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+  <!-- Content -->
+  <div class="relative flex flex-col items-start justify-center max-w-[1312px] w-full px-6 md:px-16 z-10">
+    <div class="max-w-5xl text-left text-white space-y-6">
+      
+      <!-- Logo -->
+      <img 
+        src="{{ asset('images/pod_logo_1_white.PNG') }}" 
+        alt="POD White Logo" 
+        class="h-32 sm:h-40 lg:h-48 object-contain transition-transform duration-700 ease-out hover:scale-105"
+        loading="lazy"
+      >
+
+      <!-- Heading -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        POD – A Sport Activity Movement for All Runners
+      </h1>
+
+      <!-- Description -->
+      <p class="text-base sm:text-lg md:text-xl font-medium max-w-3xl">
+        POD is not a running club, but rather a sport activity movement created for all runners. <br>
+        Born in Borneo, bringing the sweat to every city.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-4 flex flex-col sm:flex-row gap-4">
+        <a href="/registration">
+          <button class="border border-white rounded-md bg-white text-black font-semibold py-2 px-6 text-lg sm:text-xl hover:bg-gray-200 hover:scale-105 transition-all duration-300">
+            Join Our Movement!
+          </button>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-      <!-- Judul -->
-    <!-- <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-fallback tracking-tight text-gray-900">
-        Photo Gallery
-      </h2>
-      <p class="mt-4 text-base font-fallback sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Capturing every stride, the spirit of togetherness, and unforgettable moments along every track.
-      </p>
-    </div> -->
-
-
     <!-- Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       @foreach ([
         ['image_3.jpeg', 'pureofdistance-image_3'],
         ['image_2.jpeg', 'pureofdistance-image_2'],
@@ -61,33 +62,27 @@
         ['image_7.jpeg', 'pureofdistance-image_7'],
         ['image_8.jpeg', 'pureofdistance-image_8'],
         ['image_9.jpeg', 'pureofdistance-image_9'],
-      ] as $item)
+      ] as [$file, $title])
         <a 
-          href="{{ asset('gallery/' . $item[0]) }}" 
+          href="{{ asset("gallery/$file") }}" 
           data-lightbox="gallery" 
-          data-title="{{ $item[1] }}"
-          class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+          data-title="{{ $title }}"
+          class="group relative block overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
         >
           <!-- Gambar -->
           <img 
-            src="{{ asset('gallery/' . $item[0]) }}" 
-            alt="{{ $item[1] }}" 
+            src="{{ asset("gallery/$file") }}" 
+            alt="{{ $title }}" 
             class="w-full h-56 sm:h-64 lg:h-72 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
             loading="lazy"
+            decoding="async"
           >
-          
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent 
-                      opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white font-semibold text-sm sm:text-base tracking-wide">
-              {{ $item[1] }}
-            </span>
-          </div>
         </a>
       @endforeach
     </div>
   </div>
 </section>
+
 
 <section class="relative isolate overflow-hidden py-32 bg-gradient-to-br bg-slate from-green-900 via-green-900 to-green-700 text-white">
     <!-- Background Gradients / Bubbles -->
