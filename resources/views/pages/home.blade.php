@@ -48,7 +48,7 @@
 </section>
 
 
-<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+<section class="py-20 bg-black">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Grid -->
@@ -83,60 +83,60 @@
   </div>
 </section>
 
+<section class="relative isolate overflow-hidden py-32 bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white">
+  <!-- Background Gradients / Bubbles -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/bubble.png" class="absolute -top-[400px] -right-[400px] opacity-15 w-[800px]" alt="">
+    <img src="/images/bubble.png" class="absolute -bottom-[400px] -left-[400px] opacity-15 w-[800px]" alt="">
+  </div>
 
-<section class="relative isolate overflow-hidden py-32 bg-gradient-to-br bg-slate from-green-900 via-green-900 to-green-700 text-white">
-    <!-- Background Gradients / Bubbles -->
-    <div class="absolute inset-0 z-0">
-      <img src="/images/bubble.png" class="absolute -top-[400px] -right-[400px] opacity-20 w-[800px]" alt="">
-      <img src="/images/bubble.png" class="absolute -bottom-[400px] -left-[400px] opacity-20 w-[800px]" alt="">
-    </div>
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+      LIMITED SLOT
+    </h2>
+    <p class="text-base md:text-lg text-white/90 mb-12 max-w-xl mx-auto leading-relaxed">
+      Unlock the power of synergy, leveraging each other's strengths to achieve the goals with greater speed <br>
+      <strong>Pure of Distance - Caffeine Power - Daily Run</strong>
+    </p>
 
-    <!-- Content -->
-    <div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold font-fallback tracking-tight mb-6 ">
-        <!-- We Are Coming Soon -->
-        LIMITED SLOT
-      </h2>
-      <p class="text-base font-fallback md:text-lg text-white/80 mb-12 max-w-xl mx-auto">
-       Unlock the power of synergy, leveraging each other's strengths to achieve the goals with greater speed <br> <strong>Pure of Distance - Caffeine Power - Daily Run</strong>
-      </p>
-
-      <!-- Countdown Boxes -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-        <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="days" class="text-4xl font-bold font-fallback text-white">00</h3>
-          <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Days</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="hours" class="text-4xl font-bold font-fallback text-white">00</h3>
-          <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Hours</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="minutes" class="text-4xl font-bold font-fallback text-white">00</h3>
-          <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Minutes</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-lg rounded-xl py-6 px-4 shadow-md">
-          <h3 id="seconds" class="text-4xl font-bold font-fallback text-white">00</h3>
-          <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Seconds</p>
-        </div>
+    <!-- Countdown Boxes -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
+      <div class="bg-white/10 hover:bg-white/15 transition rounded-xl py-6 px-4 shadow-md">
+        <h3 id="days" class="text-4xl font-bold text-white">00</h3>
+        <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Days</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/15 transition rounded-xl py-6 px-4 shadow-md">
+        <h3 id="hours" class="text-4xl font-bold text-white">00</h3>
+        <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Hours</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/15 transition rounded-xl py-6 px-4 shadow-md">
+        <h3 id="minutes" class="text-4xl font-bold text-white">00</h3>
+        <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Minutes</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/15 transition rounded-xl py-6 px-4 shadow-md">
+        <h3 id="seconds" class="text-4xl font-bold text-white">00</h3>
+        <p class="mt-2 text-sm tracking-widest uppercase text-white/80">Seconds</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-<section class="bg-white py-14 md:py-20 relative overflow-hidden">
+
+<section class="bg-gradient-to-br from-black via-neutral-900 to-black py-14 md:py-20 relative overflow-hidden">
   <div class="max-w-[1312px] mx-auto px-6 md:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
     
     <!-- Text Content -->
-    <div class="flex-1 text-center lg:text-left text-gray-900 relative z-10">
+    <div class="flex-1 text-center lg:text-left text-white relative z-10">
       <h1 class="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-        Discover The Joy of <span class="text-green-600">Running</span> Together
+        Discover The Joy of <span class="text-green-400">Running</span> Together
       </h1>
 
       <!-- Info Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
         <!-- Date -->
-        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
-          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+        <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
+          <div class="bg-green-400 text-white p-3 rounded-lg mb-3 shadow-lg shadow-green-500/30">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -145,8 +145,8 @@
         </div>
         
         <!-- Route -->
-        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
-          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+        <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
+          <div class="bg-green-400 text-white p-3 rounded-lg mb-3 shadow-lg shadow-green-500/30">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
@@ -155,8 +155,8 @@
         </div>
 
         <!-- Location -->
-        <div class="flex flex-col items-center sm:items-start bg-green-50 border border-green-200 rounded-xl p-5 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
-          <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+        <div class="flex flex-col items-center sm:items-start bg-white/10 border border-white/20 rounded-xl p-5 backdrop-blur-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-green-400/50">
+          <div class="bg-green-400 text-white p-3 rounded-lg mb-3 shadow-lg shadow-green-500/30">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" />
               <circle cx="12" cy="11" r="2" />
@@ -169,7 +169,7 @@
       <!-- Additional Info -->
       <ul class="mt-8 space-y-3 text-left">
         <li class="text-lg"><span class="font-semibold">Jersey Code:</span> PA.CE jersey black / white</li>
-        <li class="text-lg text-green-600 font-semibold">FREE FOR ALL RUNNERS</li>
+        <li class="text-lg text-green-400 font-semibold">FREE FOR ALL RUNNERS</li>
         <li class="text-lg">Fueled by Tigris and Fives.</li>
         <li class="text-lg">Tigris, Samarinda 75117</li>
       </ul>
@@ -181,15 +181,16 @@
         src="{{ asset('images/pod_runners.jpeg') }}" 
         alt="A group of people running together during a marathon event" 
         loading="lazy"
-        class="object-cover w-full max-w-md rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1"
+        class="object-cover w-full max-w-md rounded-2xl shadow-lg shadow-green-500/20 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1"
       >
     </div>
   </div>
 
   <!-- Decorative background shapes -->
-  <div class="absolute -top-20 -right-20 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-40"></div>
-  <div class="absolute bottom-0 -left-20 w-72 h-72 bg-emerald-100 rounded-full blur-3xl opacity-40"></div>
+  <div class="absolute -top-20 -right-20 w-72 h-72 bg-green-500/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+  <div class="absolute bottom-0 -left-20 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
 </section>
+
 
 
 
