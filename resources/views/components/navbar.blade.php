@@ -1,35 +1,26 @@
-<nav class="fixed top-0 z-20 w-full py-6 bg-white text-slate-900 ">
+<nav class="fixed top-0 z-20 w-full py-6 bg-black text-white">
     <div class="max-w-[1312px] mx-auto px-6 md:px-6 lg:px-16">
         <div class="flex items-center justify-between mx-auto">
-            <a class="flex flex-row items-center justify-center gap-2 font-sans text-xl font-medium " href="/">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow">
+            <a class="flex flex-row items-center justify-center gap-2 font-sans text-xl font-medium" href="/">
+                <div class="flex items-center justify-center w-12 h-12 shadow">
                     <img
-                        src="{{ asset('images/Logo.png') }}"
+                        src="{{ asset('images/pod_logo_1_white.PNG') }}"
                         alt=""
                         class="h-10 mx-auto" />
                 </div>
-                </a>
+            </a>
 
             <ul
                 class="absolute flex-col items-center justify-center hidden w-full gap-6 text-3xl lg:flex lg:flex-row lg:text-base lg:gap-2 lg:relative lg:h-auto lg:w-auto lg:bg-transparent"
                 id="navbar">
                 
                 <li>
-                    <a
-                        href="/registration">
-                        <button class="font-fallback border border-green-800 rounded-md hover:cursor-pointer bg-black text-white  hover:opacity-80 py-1.5 px-4">
+                    <a href="/registration">
+                        <button class="border border-white bg-black text-white rounded-md hover:bg-white hover:text-black transition-colors py-1.5 px-4">
                             Registration
                         </button>
                     </a>
                 </li>
-                <!-- <li>
-                    <a
-                        href="/check-order">
-                        <button class="border hover:cursor-pointer rounded-md border-gray-900  py-1.5 px-4">
-                            Check Registration
-                        </button>
-                    </a>
-                </li> -->
             </ul>
 
             <!-- Mobile Hamburger Button -->
@@ -37,27 +28,19 @@
                 class="relative z-20 block h-10 cursor-pointer lg:hidden"
                 type="button"
                 id="hamburger">
-                <!-- Hamburger Icon -->
-                <i class="text-xl transition-transform duration-300 ease-in-out text-slate-900 fa-solid fa-bars" id="hamburgerIcon"></i>
-
-                <!-- Close Icon 
-                <i class="absolute top-0 left-0 hidden text-xl text-black transition-transform duration-300 ease-in-out transform rotate-45 fa-solid fa-xmark" id="closeIcon"></i>
-                -->
+                <i class="text-xl transition-transform duration-300 ease-in-out text-white fa-solid fa-bars" id="hamburgerIcon"></i>
             </button>
 
-
             <!-- Mobile Navbar -->
-            <ul id="mobileMenu" class="lg:hidden flex flex-col justify-center items-center absolute h-dvh bg-green-800 w-full top-24 left-0 space-y-6 p-6 transform transition-all duration-500 ease-in-out translate-x-full">
+            <ul id="mobileMenu" class="lg:hidden flex flex-col justify-center items-center absolute h-dvh bg-black w-full top-24 left-0 space-y-6 p-6 transform transition-all duration-500 ease-in-out translate-x-full">
                 <li class="w-36">
-                    <a class="block text-center py-1.5 bg-white text-green-800 font-semibold rounded-md hover:bg-opacity-90" href="/registration">Registration</a>
+                    <a class="block text-center py-1.5 border border-white bg-black text-white font-semibold rounded-md hover:bg-white hover:text-black transition-colors" href="/registration">Registration</a>
                 </li>
-                <!-- <li class="w-36">
-                    <a class="block text-center py-1.5 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-blue-800" href="/check-order">Check Regist</a>
-                </li> -->
             </ul>
         </div>
     </div>
 </nav>
+
 
 <!-- JavaScript to Handle Mobile Menu Toggle -->
 <script>
