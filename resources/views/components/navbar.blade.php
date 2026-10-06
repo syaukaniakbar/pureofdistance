@@ -1,68 +1,284 @@
-<nav class="fixed top-0 z-20 w-full py-6 bg-black text-white">
-    <div class="max-w-[1312px] mx-auto px-6 md:px-6 lg:px-16">
-        <div class="flex items-center justify-between mx-auto">
-            <a class="flex flex-row items-center justify-center gap-2 font-sans text-xl font-medium" href="/">
-                <div class="flex items-center justify-center w-12 h-12 shadow">
+
+<nav
+    class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black text-white"
+    aria-label="Main navigation"
+>
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+
+            <!-- Logo -->
+            <a
+                href="/"
+                class="flex shrink-0 items-center rounded-lg transition-opacity duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-offset-2 focus:ring-offset-black"
+                aria-label="Active Festival Samarinda - Home"
+            >
+                <div class="flex h-24 w-24 items-center justify-center">
                     <img
-                        src="{{ asset('images/pod_logo_1_white.PNG') }}"
-                        alt=""
-                        class="h-10 mx-auto" />
+                        src="{{ asset('images/pod logo 2 white.PNG') }}"
+                        alt="Active Festival Samarinda"
+                        class="h-10 w-auto object-contain"
+                    />
                 </div>
             </a>
 
+            <!-- Desktop Navigation -->
             <ul
-                class="absolute flex-col items-center justify-center hidden w-full gap-6 text-3xl lg:flex lg:flex-row lg:text-base lg:gap-2 lg:relative lg:h-auto lg:w-auto lg:bg-transparent"
-                id="navbar">
-                
+                id="navbar"
+                class="hidden items-center gap-1 lg:flex"
+            >
+                <!-- Home -->
                 <li>
-                    <a href="/registration">
-                        <button class="border border-white bg-black text-white rounded-md hover:bg-white hover:text-black transition-colors py-1.5 px-4">
-                            Registration
-                        </button>
+                    <a
+                        href="/"
+                        class="group relative flex items-center px-4 py-3 text-sm font-semibold text-white/80 transition-colors duration-200 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-inset"
+                    >
+                        Home
+
+                        <!-- Active indicator -->
+                        <span
+                            class="absolute inset-x-4 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-[#F5C400] transition-transform duration-200 group-hover:scale-x-100"
+                        ></span>
+                    </a>
+                </li>
+
+                {{-- 
+                <li>
+                    <a
+                        href="/event"
+                        class="group relative flex items-center px-4 py-3 text-sm font-semibold text-white/80 transition-colors duration-200 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-inset"
+                    >
+                        Event
+                        <span
+                            class="absolute inset-x-4 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-[#F5C400] transition-transform duration-200 group-hover:scale-x-100"
+                        ></span>
+                    </a>
+                </li>
+                --}}
+
+                <!-- About -->
+                <li>
+                    <a
+                        href="/about"
+                        class="group relative flex items-center px-4 py-3 text-sm font-semibold text-white/80 transition-colors duration-200 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-inset"
+                    >
+                        About Us
+
+                        <span
+                            class="absolute inset-x-4 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-[#F5C400] transition-transform duration-200 group-hover:scale-x-100"
+                        ></span>
+                    </a>
+                </li>
+
+                <!-- Rules -->
+                <li>
+                    <a
+                        href="/rules"
+                        class="group relative flex items-center px-4 py-3 text-sm font-semibold text-white/80 transition-colors duration-200 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-inset"
+                    >
+                        Rules
+
+                        <span
+                            class="absolute inset-x-4 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-[#F5C400] transition-transform duration-200 group-hover:scale-x-100"
+                        ></span>
+                    </a>
+                </li>
+
+                <!-- Actions -->
+                <li class="ml-3 flex items-center gap-2">
+                    <!-- Registration -->
+                    <a
+                        href="/registration"
+                        class="inline-flex items-center justify-center rounded-lg border border-[#F5C400] px-4 py-2 text-sm font-semibold text-[#F5C400] transition-all duration-200 hover:bg-[#F5C400] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-offset-2 focus:ring-offset-black"
+                    >
+                        Registration
+                    </a>
+
+                    <!-- Check Registration -->
+                    <a
+                        href="/check-registration"
+                        class="inline-flex items-center justify-center rounded-lg bg-[#F5C400] px-4 py-2 text-sm font-semibold text-black transition-all duration-200 hover:bg-[#FFD83D] focus:outline-none focus:ring-2 focus:ring-[#F5C400] focus:ring-offset-2 focus:ring-offset-black"
+                    >
+                        Check Registration
                     </a>
                 </li>
             </ul>
 
-            <!-- Mobile Hamburger Button -->
+            <!-- Mobile Menu Button -->
             <button
-                class="relative z-20 block h-10 cursor-pointer lg:hidden"
+                id="hamburger"
                 type="button"
-                id="hamburger">
-                <i class="text-xl transition-transform duration-300 ease-in-out text-white fa-solid fa-bars" id="hamburgerIcon"></i>
+                class="relative z-50 inline-flex h-11 w-11 items-center justify-center rounded-lg text-white transition-colors duration-200 hover:bg-white/10 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400] lg:hidden"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+                <i
+                    id="hamburgerIcon"
+                    class="fa-solid fa-bars text-xl transition-transform duration-200"
+                    aria-hidden="true"
+                ></i>
             </button>
-
-            <!-- Mobile Navbar -->
-            <ul id="mobileMenu" class="lg:hidden flex flex-col justify-center items-center absolute h-dvh bg-black w-full top-24 left-0 space-y-6 p-6 transform transition-all duration-500 ease-in-out translate-x-full">
-                <li class="w-36">
-                    <a class="block text-center py-1.5 border border-white bg-black text-white font-semibold rounded-md hover:bg-white hover:text-black transition-colors" href="/registration">Registration</a>
-                </li>
-            </ul>
         </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+        id="mobileMenu"
+        class="pointer-events-none invisible absolute inset-x-0 top-20 border-t border-white/10 bg-black/95 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-300 ease-out lg:hidden"
+    >
+        <ul class="mx-auto flex w-full max-w-md flex-col gap-2 px-5 py-6">
+
+            <!-- Home -->
+            <li>
+                <a
+                    href="/"
+                    class="flex min-h-12 items-center rounded-lg px-4 text-base font-semibold text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    Home
+                </a>
+            </li>
+
+            {{--
+            <li>
+                <a
+                    href="/event"
+                    class="flex min-h-12 items-center rounded-lg px-4 text-base font-semibold text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    Event
+                </a>
+            </li>
+            --}}
+
+            <!-- About -->
+            <li>
+                <a
+                    href="/about"
+                    class="flex min-h-12 items-center rounded-lg px-4 text-base font-semibold text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    About Us
+                </a>
+            </li>
+
+            <!-- Rules -->
+            <li>
+                <a
+                    href="/rules"
+                    class="flex min-h-12 items-center rounded-lg px-4 text-base font-semibold text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-[#F5C400] focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    Rules
+                </a>
+            </li>
+
+            <!-- Mobile Actions -->
+            <li class="mt-3 grid gap-3 border-t border-white/10 pt-5 sm:grid-cols-2">
+
+                <!-- Registration -->
+                <a
+                    href="/registration"
+                    class="flex min-h-12 items-center justify-center rounded-lg border border-[#F5C400] px-4 text-sm font-semibold text-[#F5C400] transition-all duration-200 hover:bg-[#F5C400] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    Registration
+                </a>
+
+                <!-- Check Registration -->
+                <a
+                    href="/check-registration"
+                    class="flex min-h-12 items-center justify-center rounded-lg bg-[#F5C400] px-4 text-sm font-semibold text-black transition-all duration-200 hover:bg-[#FFD83D] focus:outline-none focus:ring-2 focus:ring-[#F5C400]"
+                >
+                    Check Registration
+                </a>
+            </li>
+        </ul>
     </div>
 </nav>
 
-
-<!-- JavaScript to Handle Mobile Menu Toggle -->
+<!-- Mobile Navbar Script -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const hamburgerIcon = document.getElementById('hamburgerIcon');
-    const closeIcon = document.getElementById('closeIcon');
 
-    // Toggle mobile navbar visibility and hamburger icon when clicked
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full'); // Move menu in/out
-        mobileMenu.classList.toggle('translate-x-0'); // Show menu
-        hamburgerIcon.classList.toggle('fa-bars'); // Toggle hamburger icon
-        hamburgerIcon.classList.toggle('fa-xmark'); // Toggle X icon
+    function openMobileMenu() {
+        mobileMenu.classList.remove(
+            'pointer-events-none',
+            'invisible',
+            'opacity-0'
+        );
+
+        mobileMenu.classList.add(
+            'pointer-events-auto',
+            'visible',
+            'opacity-100'
+        );
+
+        hamburgerIcon.classList.remove('fa-bars');
+        hamburgerIcon.classList.add('fa-xmark');
+
+        hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove(
+            'pointer-events-auto',
+            'visible',
+            'opacity-100'
+        );
+
+        mobileMenu.classList.add(
+            'pointer-events-none',
+            'invisible',
+            'opacity-0'
+        );
+
+        hamburgerIcon.classList.remove('fa-xmark');
+        hamburgerIcon.classList.add('fa-bars');
+
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMobileMenu() {
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    hamburger.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMobileMenu();
     });
 
-    // Close navbar if clicked outside
+    // Close menu when clicking outside
     document.addEventListener('click', (event) => {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-            mobileMenu.classList.add('translate-x-full'); // Hide menu
-            hamburgerIcon.classList.remove('fa-xmark'); // Reset to hamburger
-            hamburgerIcon.classList.add('fa-bars');
+        if (
+            !mobileMenu.contains(event.target) &&
+            !hamburger.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu after clicking a navigation link
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu when pressing Escape
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+
+    // Reset mobile menu when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            closeMobileMenu();
         }
     });
 </script>

@@ -9,7 +9,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/pod_logo_1_white.PNG') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/pod logo 3 white.PNG') }}" type="image/png">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

@@ -2,35 +2,76 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\RegistrationSuccess;
+use App\Http\Controllers\RegionController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Home
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
+
+Route::get('/about', function () {
+    return view('pages.about');
+})->name('about');
+
+
+
+Route::get('/rules', function () {
+    return view('pages.rules');
+})->name('rules');
+
+Route::get('/check-registration', function () {
+    return view('pages.check-registration');
+})->name('check-registration');
+
+
+/*
+|--------------------------------------------------------------------------
+| Region
+|--------------------------------------------------------------------------
+*/
+
+
+Route::get('/regions/cities/{province}', [RegionController::class, 'cities'])
+    ->name('regions.cities');
+
+Route::get('/regions/districts/{city}', [RegionController::class, 'districts'])
+    ->name('regions.districts');
+
+Route::get('/regions/villages/{district}', [RegionController::class, 'villages'])
+    ->name('regions.villages');
+
+/*
+|--------------------------------------------------------------------------
+| Registration
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/registration', [RegistrationController::class, 'create'])->name('register.create');
+
+
 Route::post('/registration', [RegistrationController::class, 'store'])->name('register.store');
 
-Route::get('/test-email', function () {
-    // Data dummy
-    $nama = 'Akhmad Syaukani Akbar';
-    $no_hp = '085219594240';
-    $jenis_kelamin = 'Laki-laki';
-    $email = 'cozycat2001@gmail.com'; // ganti dengan emailmu sendiri saat testing
 
-    // Kirim email
-    Mail::to($email)->send(new RegistrationSuccess($nama, $no_hp, $jenis_kelamin));
+/*
+|--------------------------------------------------------------------------
+| Checkout
+|--------------------------------------------------------------------------
+*/
 
-    return 'Email test telah dikirim ke ' . $email;
-});
+Route::get('/checkout/{orderId}', [RegistrationController::class, 'checkout'])->name('checkout.show');
 
-Route::get('/preview-email', function () {
-    // Data dummy untuk preview
-    $nama = 'Akhmad Syaukani Akbar';
-    $no_hp = '085219594240';
-    $jenis_kelamin = 'Laki-laki';
 
-    // Tampilkan langsung di browser
-    return new RegistrationSuccess($nama, $no_hp, $jenis_kelamin);
-});
+/*
+|--------------------------------------------------------------------------
+| Payment
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/payment/status/{orderId}', [RegistrationController::class, 'paymentStatus'])->name('payment.status');
+
