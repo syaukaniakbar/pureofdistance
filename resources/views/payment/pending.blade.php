@@ -1,319 +1,307 @@
 <x-layouts.main>
 
-    <x-slot:title>
-        Payment Pending | Pureofdistance Run 2026
-    </x-slot>
+<x-slot:title>
+    Payment Pending | Pureofdistance Run 2026
+</x-slot>
 
 
-    {{-- =========================================================
-        PAYMENT PENDING PAGE
-    ========================================================== --}}
-    <section
-        class="min-h-screen bg-white pt-28 sm:pt-32 lg:pt-36 pb-16 px-4 sm:px-6 lg:px-8 selection:bg-yellow-400 selection:text-slate-950"
-    >
+<section
+    class="min-h-screen bg-white pt-28 sm:pt-32 lg:pt-36 pb-20 px-4 sm:px-6 lg:px-8 selection:bg-yellow-400 selection:text-slate-950"
+>
 
-        <div class="max-w-2xl mx-auto">
+    <div class="max-w-xl mx-auto">
+
+
+        {{-- =========================================================
+            EVENT BRAND
+        ========================================================== --}}
+        <div class="flex items-center justify-center gap-3 mb-10">
+
+            <span class="w-6 h-px bg-yellow-400"></span>
+
+            <span
+                class="text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase text-slate-500"
+            >
+                Pureofdistance Run 2026
+            </span>
+
+            <span class="w-6 h-px bg-yellow-400"></span>
+
+        </div>
+
+
+        {{-- =========================================================
+            MAIN CARD
+        ========================================================== --}}
+        <div
+            class="bg-white border border-slate-200 rounded-3xl shadow-[0_8px_40px_rgba(15,23,42,0.06)] overflow-hidden"
+        >
 
 
             {{-- =================================================
-                EVENT LABEL
+                STATUS
             ================================================== --}}
-            <div class="flex items-center justify-center gap-3 mb-8">
+            <div
+                class="px-6 sm:px-10 pt-10 sm:pt-12 pb-8 text-center"
+            >
 
-                <span class="w-8 h-1 bg-yellow-400 rounded-full"></span>
-
-                <span
-                    class="text-xs sm:text-sm font-extrabold tracking-[0.18em] text-slate-900 uppercase"
+                {{-- Status Icon --}}
+                <div
+                    class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-yellow-50 border border-yellow-100 text-yellow-600 mb-6"
                 >
-                    Pureofdistance Run 2026
-                </span>
 
-                <span class="w-8 h-1 bg-yellow-400 rounded-full"></span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 8v4l2.5 2.5m6.5-2.5a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                    </svg>
+
+                </div>
+
+
+                {{-- Eyebrow --}}
+                <p
+                    class="text-[11px] font-bold tracking-[0.2em] uppercase text-yellow-600 mb-3"
+                >
+                    Payment Status
+                </p>
+
+
+                <h1
+                    class="text-3xl sm:text-4xl font-black tracking-tight text-slate-950"
+                >
+                    Payment Pending
+                </h1>
+
+
+                <p
+                    class="mt-4 max-w-md mx-auto text-sm sm:text-base leading-relaxed text-slate-500"
+                >
+                    Hi {{ $order->nama }}, your payment hasn't been
+                    completed yet. Continue your payment to secure your
+                    registration.
+                </p>
 
             </div>
 
 
             {{-- =================================================
-                MAIN CARD
+                ORDER SUMMARY
             ================================================== --}}
-            <div
-                class="bg-white border border-slate-200 border-t-4 border-t-yellow-400 rounded-2xl shadow-md overflow-hidden"
-            >
+            <div class="px-6 sm:px-10 pb-8">
 
-                {{-- =================================================
-                    STATUS HEADER
-                ================================================== --}}
-                <div class="px-6 sm:px-10 pt-10 pb-8 text-center">
+                <div
+                    class="rounded-2xl border border-slate-200 overflow-hidden"
+                >
 
-                    {{-- Pending Icon --}}
+                    {{-- Order ID --}}
                     <div
-                        class="mx-auto w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-2xl bg-yellow-100 text-yellow-600 mb-6"
+                        class="px-5 sm:px-6 py-5 border-b border-slate-100"
                     >
 
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-9 h-9 sm:w-10 sm:h-10"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2"
+                        <p
+                            class="text-[10px] font-bold tracking-[0.16em] uppercase text-slate-400 mb-2"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                        </svg>
+                            Order ID
+                        </p>
+
+                        <p
+                            class="font-mono text-sm font-semibold text-slate-800 break-all"
+                        >
+                            {{ $order->order_id }}
+                        </p>
 
                     </div>
 
 
-                    {{-- Status Label --}}
-                    <p
-                        class="text-xs font-bold tracking-[0.2em] text-yellow-600 uppercase mb-2"
-                    >
-                        Payment Status
-                    </p>
-
-
-                    <h1
-                        class="text-3xl sm:text-4xl font-black tracking-tight text-slate-950"
-                    >
-                        Payment Pending
-                    </h1>
-
-
-                    <p
-                        class="mt-4 text-sm sm:text-base text-slate-500 leading-relaxed max-w-md mx-auto"
-                    >
-                        Hi {{ $order->nama }}, your payment is still waiting
-                        for confirmation.
-                    </p>
-
-                </div>
-
-
-                {{-- =================================================
-                    ORDER INFORMATION
-                ================================================== --}}
-                <div class="px-6 sm:px-10 pb-8">
-
+                    {{-- Amount --}}
                     <div
-                        class="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6"
+                        class="px-5 sm:px-6 py-5 flex items-center justify-between gap-6 border-b border-slate-100"
                     >
 
-                        <div class="space-y-5">
+                        <span class="text-sm text-slate-500">
+                            Amount
+                        </span>
+
+                        <span
+                            class="text-lg font-black text-slate-950 text-right"
+                        >
+                            Rp {{ number_format($order->gross_amount, 0, ',', '.') }}
+                        </span>
+
+                    </div>
 
 
-                            {{-- Order ID --}}
-                            <div>
+                    {{-- Payment Method --}}
+                    @if($order->payment_type)
 
-                                <p
-                                    class="text-xs font-bold tracking-wider text-slate-400 uppercase mb-2"
-                                >
-                                    Order ID
-                                </p>
+                        <div
+                            class="px-5 sm:px-6 py-5 flex items-center justify-between gap-6 border-b border-slate-100"
+                        >
 
-                                <p
-                                    class="font-mono text-sm font-bold text-slate-800 break-all"
-                                >
-                                    {{ $order->order_id }}
-                                </p>
+                            <span class="text-sm text-slate-500">
+                                Payment Method
+                            </span>
 
-                            </div>
-
-
-                            {{-- Amount --}}
-                            <div
-                                class="flex items-center justify-between gap-4"
+                            <span
+                                class="text-sm font-bold text-slate-900 text-right capitalize"
                             >
-
-                                <span class="text-sm text-slate-500">
-                                    Amount
-                                </span>
-
-                                <span
-                                    class="text-base font-black text-slate-950 text-right"
-                                >
-                                    Rp {{ number_format($order->gross_amount, 0, ',', '.') }}
-                                </span>
-
-                            </div>
-
-
-                            {{-- Payment Method --}}
-                            @if($order->payment_type)
-                                <div
-                                    class="flex items-center justify-between gap-4"
-                                >
-
-                                    <span class="text-sm text-slate-500">
-                                        Payment Method
-                                    </span>
-
-                                    <span
-                                        class="text-sm font-bold text-slate-950 text-right capitalize"
-                                    >
-                                        {{ $order->payment_type }}
-                                    </span>
-
-                                </div>
-                            @endif
-
-
-                            {{-- Expired --}}
-                            @if($order->expired_at)
-
-                                <div
-                                    class="border-t border-dashed border-slate-200 pt-5"
-                                >
-
-                                    <div
-                                        class="flex items-center justify-between gap-4"
-                                    >
-
-                                        <span class="text-sm text-slate-500">
-                                            Payment Expires
-                                        </span>
-
-                                        <span
-                                            class="text-sm font-bold text-slate-950 text-right"
-                                        >
-                                            {{ $order->expired_at }}
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                            @endif
-
+                                {{ $order->payment_type }}
+                            </span>
 
                         </div>
 
-                    </div>
+                    @endif
 
 
-                    {{-- =================================================
-                        INFORMATION
-                    ================================================== --}}
-                    <div
-                        class="mt-6 flex items-start gap-3 p-4 rounded-xl bg-yellow-50 border border-yellow-100"
-                    >
+                    {{-- Expiration --}}
+                    @if($order->expired_at)
 
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
-                            />
-                        </svg>
-
-                        <p
-                            class="text-sm text-slate-600 leading-relaxed"
-                        >
-                            Please complete your payment if you haven't
-                            already. Your payment status will be updated
-                            after Midtrans confirms the transaction.
-                        </p>
-
-                    </div>
-
-
-                    {{-- =================================================
-                        ACTION
-                    ================================================== --}}
-                    <div class="mt-8">
-
-                        <a
-                            href="{{ route('home') }}"
-                            class="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-slate-950 font-black text-base uppercase tracking-wider py-4 px-6 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+                        <div
+                            class="px-5 sm:px-6 py-5 flex items-center justify-between gap-6"
                         >
 
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="w-5 h-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"
-                                />
-                            </svg>
-
-                            Back Home
-
-                        </a>
-
-                    </div>
-
-
-                    {{-- =================================================
-                        SECURITY / FOOTER
-                    ================================================== --}}
-                    <div
-                        class="mt-6 flex items-center justify-center gap-2"
-                    >
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-4 h-4 text-slate-400"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                            />
-                        </svg>
-
-                        <p class="text-xs text-slate-400">
-                            Payment secured by
-                            <span class="font-bold text-slate-600">
-                                Midtrans
+                            <span class="text-sm text-slate-500">
+                                Payment Expires
                             </span>
-                        </p>
 
-                    </div>
+                            <span
+                                class="text-sm font-semibold text-slate-900 text-right"
+                            >
+                                {{ $order->expired_at }}
+                            </span>
+
+                        </div>
+
+                    @endif
 
                 </div>
 
-            </div>
 
-
-            {{-- =================================================
-                FOOTER
-            ================================================== --}}
-            <div
-                class="mt-8 pt-6 border-t border-slate-100"
-            >
-
+                {{-- =================================================
+                    PAYMENT NOTICE
+                ================================================== --}}
                 <div
-                    class="flex flex-col sm:flex-row items-center justify-between gap-3"
+                    class="mt-6 flex items-start gap-3"
                 >
 
-                    <p
-                        class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
+                    <div
+                        class="flex-shrink-0 mt-0.5 text-yellow-500"
                     >
-                        Pureofdistance Run 2026
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 9v3m0 4h.01M10.29 3.86l-8.02 14A2 2 0 003.99 21h16.02a2 2 0 001.72-3.14l-8.02-14a2 2 0 00-3.42 0z"
+                            />
+                        </svg>
+
+                    </div>
+
+                    <p
+                        class="text-xs sm:text-sm text-slate-500 leading-relaxed"
+                    >
+                        Your registration will remain pending until
+                        Midtrans confirms the payment. Please complete
+                        the payment before it expires.
                     </p>
 
-                    <p class="text-xs text-slate-400">
-                        Run your distance. Own your race.
+                </div>
+
+
+                {{-- =================================================
+                    PRIMARY CTA
+                ================================================== --}}
+                <div class="mt-8">
+
+                    <a
+                        href="{{ route('checkout.show', ['orderId' => $order->order_id]) }}"
+                        class="group w-full inline-flex items-center justify-center gap-3 bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-slate-950 font-extrabold text-sm sm:text-base uppercase tracking-[0.12em] py-4 px-6 rounded-2xl transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5"
+                    >
+
+                        <span>
+                            Continue Payment
+                        </span>
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M5 12h14m-6-6l6 6-6 6"
+                            />
+                        </svg>
+
+                    </a>
+
+                </div>
+
+
+                {{-- =================================================
+                    SECONDARY CTA
+                ================================================== --}}
+                <div class="mt-3">
+
+                    <a
+                        href="{{ route('home') }}"
+                        class="w-full inline-flex items-center justify-center text-sm font-semibold text-slate-500 hover:text-slate-950 py-3 rounded-xl transition-colors duration-200"
+                    >
+                        Back to Home
+                    </a>
+
+                </div>
+
+
+                {{-- =================================================
+                    SECURE PAYMENT
+                ================================================== --}}
+                <div
+                    class="mt-5 flex items-center justify-center gap-2"
+                >
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-3.5 h-3.5 text-slate-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        />
+                    </svg>
+
+                    <p class="text-[11px] text-slate-400">
+                        Secure payment powered by
+                        <span class="font-semibold text-slate-600">
+                            Midtrans
+                        </span>
                     </p>
 
                 </div>
@@ -322,6 +310,22 @@
 
         </div>
 
-    </section>
+
+        {{-- =========================================================
+            PAGE FOOTER
+        ========================================================== --}}
+        <div class="mt-8 text-center">
+
+            <p
+                class="text-[11px] font-semibold tracking-[0.16em] uppercase text-slate-400"
+            >
+                Run your distance. Own your race.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 </x-layouts.main>
