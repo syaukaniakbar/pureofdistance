@@ -15,11 +15,17 @@ class Payment extends Model
         'payment_status',
         'paid_at',
         'expired_at',
+        'qr_token',
+        'pending_email_sent_at',
+        'success_email_sent_at',
+        'snap_token',
     ];
 
     protected $casts = [
-        'paid_at' => 'datetime',
-        'expired_at' => 'datetime',
+        'paid_at'                => 'datetime',
+        'expired_at'             => 'datetime',
+        'pending_email_sent_at'  => 'datetime',
+        'success_email_sent_at'  => 'datetime',
     ];
 
     public function registration()
