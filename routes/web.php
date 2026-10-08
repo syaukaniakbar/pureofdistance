@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RegionController;
+use Illuminate\Support\Facades\Mail;
 
 
 /*
@@ -74,4 +75,19 @@ Route::get('/checkout/{orderId}', [RegistrationController::class, 'checkout'])->
 */
 
 Route::get('/payment/status/{orderId}', [RegistrationController::class, 'paymentStatus'])->name('payment.status');
+
+
+
+Route::get('/test-mail', function () {
+    try {
+        Mail::raw('Hello! This is a test email from Pureofdistance Run 2026.', function ($message) {
+            $message->to('syaukaniakbar2019@gmail.com')
+                    ->subject('Test Email - Pureofdistance Run 2026');
+        });
+
+        return 'Email sent successfully!';
+    } catch (\Throwable $e) {
+        return 'Email failed: ' . $e->getMessage();
+    }
+});
 
