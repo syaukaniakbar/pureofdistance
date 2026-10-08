@@ -51,9 +51,10 @@ class RegistrationService
 
             $snapToken = \Midtrans\Snap::getSnapToken($params);
 
+            $payment->update(['snap_token' => $snapToken]);
+
             return [
                 'payment' => $payment,
-                'snapToken' => $snapToken
             ];
         });
     }

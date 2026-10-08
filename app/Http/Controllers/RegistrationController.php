@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRegistrationRequest;
+use App\Models\Payment;
+use App\Services\PaymentService;
+use App\Services\QrCodeService;
+use App\Services\RegistrationService;
 use Illuminate\Http\Request;
-use Midtrans\Config;
 use Illuminate\Support\Facades\Log;
 use Laravolt\Indonesia\Models\Province;
-use App\Services\RegistrationService;
-use App\Models\Registration;
-use App\Models\Payment;
-
+use Midtrans\Config;
 
 
 class RegistrationController extends Controller
@@ -48,10 +48,6 @@ class RegistrationController extends Controller
                 ->route(
                     'checkout.show',
                     $result['payment']->order_id
-                )
-                ->with(
-                    'snapToken',
-                    $result['snapToken']
                 );
 
         } catch (\Exception $e) {
@@ -76,14 +72,14 @@ class RegistrationController extends Controller
             ->firstOrFail();
 
         return view('pages.checkout', [
-            'payment' => $payment,
-            'snapToken' => session('snapToken'),
+            'payment'    => $payment,
+            'snapToken'  => $payment->snap_token,
         ]);
     }
 
-    public function callback(Request $request)
+    public function callback(Request $request, PaymentService $paymentService)
     {
-        Config::$serverKey = config('midtrans.serverKey');
+        Config::$serverKey    = config('midtrans.serverKey');
         Config::$isProduction = config('midtrans.isProduction');
 
         Log::info('Midtrans Callback Received', [
@@ -114,7 +110,9 @@ class RegistrationController extends Controller
         $payment = Payment::where(
             'order_id',
             $request->order_id
-        )->first();
+        )
+            ->with('registration')
+            ->first();
 
         if (!$payment) {
 
@@ -139,9 +137,14 @@ class RegistrationController extends Controller
                     $payment->update([
                         'payment_status' => 'paid',
                         'transaction_id' => $request->transaction_id,
-                        'payment_type' => $request->payment_type,
-                        'paid_at' => now(),
+                        'payment_type'   => $request->payment_type,
+                        'paid_at'        => now(),
                     ]);
+
+                    // - Send success email
+                    $paymentService->sendSuccessEmail(
+                        $payment->fresh()
+                    );
                 }
 
                 break;
@@ -156,9 +159,14 @@ class RegistrationController extends Controller
                 $payment->update([
                     'payment_status' => 'paid',
                     'transaction_id' => $request->transaction_id,
-                    'payment_type' => $request->payment_type,
-                    'paid_at' => now(),
+                    'payment_type'   => $request->payment_type,
+                    'paid_at'        => now(),
                 ]);
+
+                // - Send success email
+                $paymentService->sendSuccessEmail(
+                    $payment->fresh()
+                );
 
                 break;
 
@@ -170,9 +178,14 @@ class RegistrationController extends Controller
                 $payment->update([
                     'payment_status' => 'pending',
                     'transaction_id' => $request->transaction_id,
-                    'payment_type' => $request->payment_type,
-                    'expired_at' => $request->expiry_time,
+                    'payment_type'   => $request->payment_type,
+                    'expired_at'     => $request->expiry_time,
                 ]);
+
+                // PaymentService handles pending email
+                $paymentService->sendPendingEmail(
+                    $payment->fresh()
+                );
 
                 break;
 
@@ -183,7 +196,7 @@ class RegistrationController extends Controller
 
                 $payment->update([
                     'payment_status' => 'expired',
-                    'expired_at' => now(),
+                    'expired_at'     => now(),
                 ]);
 
                 break;
@@ -197,7 +210,7 @@ class RegistrationController extends Controller
                 $payment->update([
                     'payment_status' => 'failed',
                     'transaction_id' => $request->transaction_id,
-                    'payment_type' => $request->payment_type,
+                    'payment_type'   => $request->payment_type,
                 ]);
 
                 break;
@@ -210,14 +223,14 @@ class RegistrationController extends Controller
                 $payment->update([
                     'payment_status' => 'refunded',
                     'transaction_id' => $request->transaction_id,
-                    'payment_type' => $request->payment_type,
+                    'payment_type'   => $request->payment_type,
                 ]);
 
                 break;
         }
 
         Log::info('Payment Updated Successfully', [
-            'order_id' => $request->order_id,
+            'order_id'       => $request->order_id,
             'payment_status' => $payment->fresh()->payment_status
         ]);
 
@@ -227,36 +240,35 @@ class RegistrationController extends Controller
     }
 
 
+    public function paymentStatus(string $orderId)
+    {
+        $order = Payment::with('registration')
+            ->where('order_id', $orderId)
+            ->firstOrFail();
+
+        switch ($order->payment_status) {
+
+            case 'paid':
+                return view('payment.success', compact('order'));
 
 
-public function paymentStatus(string $orderId)
-{
-    $order = Payment::where('order_id', $orderId)
-        ->firstOrFail();
-
-    switch ($order->payment_status) {
-
-        case 'paid':
-            return view('payment.success', compact('order'));
+            case 'pending':
+            case 'unpaid':
+                return view('payment.pending', compact('order'));
 
 
-        case 'pending':
-        case 'unpaid':
-            return view('payment.pending', compact('order'));
+            case 'expired':
+            case 'failed':
+                return view('payment.failed', compact('order'));
 
 
-        case 'expired':
-        case 'failed':
-            return view('payment.failed', compact('order'));
+            case 'refunded':
+                return view('payment.refunded', compact('order'));
 
 
-        case 'refunded':
-            return view('payment.refunded', compact('order'));
-
-
-        default:
-            return view('payment.processing', compact('order'));
+            default:
+                return view('payment.processing', compact('order'));
+        }
     }
-}
 
 }
